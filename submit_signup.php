@@ -8,14 +8,14 @@
 	$result = mysql_query($sql); 
 	while($row=mysql_fetch_array($result)){ 
 	
-		 if($row['username'] == $user_name || $row['password'] == $password){
+		 if($row['username'] == $user_name && $row['password'] == $password){
 			 echo "sorry already exists";
+			 break;
 		 }else{
 			mysql_query("INSERT INTO firsttable (username,password) VALUES ('$user_name','$password')");
 		//to insert data into database //we should follow the same order in database 
 			 header('Location: /fatma/list.php'); //redirect back to the list page
-		 
-		
+			 break;
 		 } }?>
 	
 <!doctype html>
