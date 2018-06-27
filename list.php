@@ -14,7 +14,6 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 	
 <script>
 
@@ -31,6 +30,11 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 		  <a class="navbar-brand" href="#">Home</a>
+		  <p class="navbar-brand"><?php session_start();
+			  	if($_SESSION['logged'] == true){
+					echo $_SESSION['username'];
+				}
+			  ?></p>
 		</div>
   	</div>
 </nav>
