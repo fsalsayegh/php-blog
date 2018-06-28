@@ -11,7 +11,7 @@
 		 if($row['username'] == $user_name && $row['password'] == $password){
 			 echo "sorry already exists";
 			 $_SESSION["logged"] = false;
-//			 header("Location: /fatma/signup.php");
+			 //header("Location: /fatma/signup.php");
 			 break;
 		 }else{
 			mysql_query("INSERT INTO firsttable (username,password) VALUES ('$user_name','$password')");
