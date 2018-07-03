@@ -3,10 +3,12 @@
 <?php 
 	$title=$_POST["title"];
 	$content=$_POST["content"];
-	
-//	echo $title;
-//	echo $content;
-//	echo $img;
+	$date = $_POST['datepicker'];
+
+	$newdate = str_replace('/', '-', $date);
+	$insertedDate = date('Y-m-d', strtotime($newdate));
+
+
 	$target = "pics/";
 	$target = $target . basename( $_FILES['Filename']['name']);
 
@@ -14,9 +16,7 @@
 	$Filename=basename( $_FILES['Filename']['name']);
 	
 
-	mysql_query("INSERT INTO post (title,content,image) VALUES ('$title','$content','$Filename')" );
-	
-
+	mysql_query("INSERT INTO post (title,content,image,date) VALUES ('$title','$content','$Filename','$insertedDate')" );
 	?>
 
 <!doctype html>
