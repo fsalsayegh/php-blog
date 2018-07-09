@@ -35,6 +35,7 @@
 					echo $_SESSION['username'];
 				}
 			  ?></p>
+			<a class="navbar-brand" href="/fatma/logout.php">logout</a>
 		</div>
   	</div>
 </nav>
@@ -72,6 +73,7 @@
 				<div class="caption">
 				<h3>Title:<?php echo $list['title']?></h3>
 				<p>content:<?php echo $list['content']?></p>
+				<p>Published Date:<?php echo $list['date']?></p>
 				<p>
 				<?php
 					echo '<a class="btn btn-danger" href="/fatma/delete_post.php?id=' . $list['id']. '">Delete</a>';
@@ -79,7 +81,9 @@
 				<?php
 					echo '<a class="btn btn-primary" href="/fatma/update_post.php?id=' . $list['id']. '">Update</a>';
 				?>
-				</p>	
+				<a class="btn btn-success" href="/fatma/detail.php" >Detail</a>
+				</p>
+					
 				</div>
 			</div>
 		</div>
@@ -100,6 +104,7 @@
 					<div class="caption">
 					<h3>Title:<?php echo $list['title']?></h3>
 					<p>content:<?php echo $list['content']?></p>
+					<p>Published Date:<?php echo $list['date']?></p>
 					<p>
 						<?php
 							echo '<a class="btn btn-danger" href="/fatma/delete_post.php?id=' . $list['id']. '">Delete</a>';
@@ -107,6 +112,7 @@
 						<?php
 							echo '<a class="btn btn-primary" href="/fatma/update_post.php?id=' . $list['id']. '">Update</a>';
 						?>
+						<a class="btn btn-success" href="/fatma/detail.php" >Detail</a>
 					</p>	
 				</div>
 			</div>
@@ -127,9 +133,13 @@
 						<div class="caption">
 							<h3>Title:<?php echo $list['title']?></h3>
 							<p>content:<?php echo $list['content']?></p>
+							<p>Published Date:<?php echo $list['date']?></p>
 							<p>
 								<?php echo '<a class="btn btn-danger" href="/fatma/delete_post.php?id=' . $list['id']. '">Delete</a>';?>
 								<?php echo '<a class="btn btn-primary" href="/fatma/update_post.php?id=' . $list['id']. '">Update</a>'; ?>
+								
+								<a class="btn btn-success" href="/fatma/detail.php">Detail</a>
+								
 							</p>	
 					</div>
 				</div>

@@ -26,13 +26,43 @@
 				}
 		  ?></p>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Coding</h5>
-    <p class="card-text">Programing languages: PHP, Javascript, python">Go somewhere</a>
-  </div>
+  <?php $sql = "SELECT * FROM post "; 
+			$result= mysql_query($sql);
+			while($list=mysql_fetch_array($result)){
+			?>	
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div style="position: relative; left: 330px;" class="thumbnail">
+<!--						<img src="pics/<?php echo $list['image'];?>">-->
+						<div class="caption">
+							<h3>Title:<?php echo $list['title']?></h3>
+							<p>content:<?php echo $list['content']?></p>
+							
+							<!-- object oreinted PHP	-->
+							<?php
+							$Date = $list['date'];
+							$now  = date('Y-m-d'); //current date
+							$datetime1 = new DateTime($Date);
+							$datetime2 = new DateTime($now);
+							$interval = $datetime1->diff($datetime2); //subtruct the new date from old date
+							if ($interval->format('%a') == 0){ //if the post was posted today
+								echo $interval->format('today'); // the arrow -> like the dot .
+							}else{
+							echo $interval->format('%a days ago');
+							}
+							?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
   <div class="card-footer text-muted">
-    2 days ago
+	  <?php
+		
+	  ?>
   </div>
 </div>
 </body>
 </html>
+
+
